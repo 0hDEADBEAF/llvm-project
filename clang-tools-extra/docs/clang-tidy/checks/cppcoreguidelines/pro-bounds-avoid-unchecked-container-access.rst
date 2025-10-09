@@ -37,26 +37,26 @@ profile from the C++ Core Guidelines.
 Options
 -------
 
-.. option:: ExcludeClasses
+.. option:: ExcludeClasses (added in 22.0.0)
 
     Semicolon-delimited list of class names for overwriting the default
     exclusion list. The default is:
     `::std::map;::std::unordered_map;::std::flat_map`.
     
-.. option:: FixMode
+.. option:: FixMode (added in 22.0.0)
 
     Determines what fixes are suggested. Either `none`, `at` (use 
     ``a.at(index)`` if a fitting function exists) or `function` (use a 
     function ``f(a, index)``). The default is `none`.
 
-.. option:: FixFunction
+.. option:: FixFunction (added in 22.0.0)
 
     The function to use in the `function` mode. For C++23 and beyond, the
     passed function must support the empty subscript operator, i.e., the case
     where ``a[]`` becomes ``f(a)``. :option:`FixFunctionEmptyArgs` can be
     used to override the suggested function in that case. The default is `gsl::at`. 
 
-.. option:: FixFunctionEmptyArgs
+.. option:: FixFunctionEmptyArgs (added in 22.0.0)
 
     The function to use in the `function` mode for the empty subscript operator
     case in C++23 and beyond only. If no fixes should be made for empty

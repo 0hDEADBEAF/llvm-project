@@ -78,7 +78,7 @@ enum type) are set to 0.
 Options
 -------
 
-.. option:: IgnoredEnums
+.. option:: IgnoredEnums (added in 22.0.0)
 
   Semicolon-separated list of regexes specifying enums for which this check won't be
   enforced. Default is `::std::errc`.

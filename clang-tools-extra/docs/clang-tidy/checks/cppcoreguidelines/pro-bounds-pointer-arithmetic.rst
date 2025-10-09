@@ -17,7 +17,7 @@ profile from the C++ Core Guidelines.
 Options
 -------
 
-.. option:: AllowIncrementDecrementOperators
+.. option:: AllowIncrementDecrementOperators (added in 22.0.0)
 
    When enabled, the check will allow using the prefix/postfix increment or
    decrement operators on pointers. Default is ``false``.

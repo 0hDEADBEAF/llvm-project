@@ -54,7 +54,7 @@ use cases but similar (not exactly same) effect can be achieved with the
 Options
 -------
 
-.. option:: DisallowedVisibilityChange
+.. option:: DisallowedVisibilityChange (added in 22.0.0)
 
   Controls what kind of change to the visibility will be detected by the check.
   Possible values are `any`, `widening`, `narrowing`. For example the
@@ -62,13 +62,13 @@ Options
   from more restrictive (``private``) to less restrictive (``public``).
   Default value is `any`.
 
-.. option:: CheckDestructors
+.. option:: CheckDestructors (added in 22.0.0)
 
   If `true`, the check does apply to destructors too. Otherwise destructors
   are ignored by the check.
   Default value is `false`.
 
-.. option:: CheckOperators
+.. option:: CheckOperators (added in 22.0.0)
 
   If `true`, the check does apply to overloaded C++ operators (as virtual
   member functions) too. This includes other special member functions (like
@@ -76,7 +76,7 @@ Options
   operators and conversions are not often virtual functions.
   Default value is `false`.
 
-.. option:: IgnoredFunctions
+.. option:: IgnoredFunctions (added in 22.0.0)
 
   This option can be used to ignore the check at specific functions.
   To configure this option, a semicolon-separated list of function names

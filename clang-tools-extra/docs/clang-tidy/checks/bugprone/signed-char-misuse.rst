@@ -107,7 +107,7 @@ so both arguments will have the same type.
 Options
 -------
 
-.. option:: CharTypedefsToIgnore
+.. option:: CharTypedefsToIgnore (added in 22.0.0)
 
   A semicolon-separated list of typedef names. In this list, we can list
   typedefs for ``char`` or ``signed char``, which will be ignored by the
@@ -115,7 +115,7 @@ Options
   ``sal_Int8`` or ``int8_t``. In this case, human misinterpretation is not
   an issue. Default is an empty string.
 
-.. option:: DiagnoseSignedUnsignedCharComparisons
+.. option:: DiagnoseSignedUnsignedCharComparisons (added in 15.0.0)
 
   When `true`, the check will warn on ``signed char``/``unsigned char`` comparisons,
   otherwise these comparisons are ignored. By default, this option is set to `true`.

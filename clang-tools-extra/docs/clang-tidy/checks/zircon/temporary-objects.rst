@@ -47,7 +47,7 @@ prohibited base class type does not similarly prohibit derived class types.
 Options
 -------
 
-.. option:: Names
+.. option:: Names (added in 15.0.0)
 
    A semi-colon-separated list of fully-qualified names of C++ classes that
    should not be constructed as temporaries. Default is empty.
