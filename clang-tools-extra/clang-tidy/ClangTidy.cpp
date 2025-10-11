@@ -685,9 +685,10 @@ ChecksAndOptions getAllChecksAndOptions(bool AllowEnablingAnalyzerAlphaCheckers,
   ChecksAndOptions Result;
   ClangTidyOptions Opts;
   Opts.Checks = "*";
+  bool EnableModuleHeadersParsing = false;
   clang::tidy::ClangTidyContext Context(
       std::make_unique<DefaultOptionsProvider>(ClangTidyGlobalOptions(), Opts),
-      AllowEnablingAnalyzerAlphaCheckers, false, ExperimentalCustomChecks);
+      AllowEnablingAnalyzerAlphaCheckers, EnableModuleHeadersParsing, ExperimentalCustomChecks);
   ClangTidyCheckFactories Factories;
 #if CLANG_TIDY_ENABLE_QUERY_BASED_CUSTOM_CHECKS
   if (ExperimentalCustomChecks && custom::RegisterCustomChecks)
