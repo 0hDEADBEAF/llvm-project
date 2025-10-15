@@ -70,19 +70,19 @@ struct OptionEnumMapping<
 namespace readability {
 
 // clang-format off
+// Class is the first option for which HungarianPrefix is available
+// Variable is the last option for which HungarianPrefix is available
 #define NAMING_KEYS(m) \
-    m(Namespace) \
-    m(InlineNamespace) \
-    m(EnumConstant) \
-    m(ScopedEnumConstant) \
-    m(ConstexprVariable) \
-    m(ConstantMember) \
-    m(PrivateMember) \
-    m(ProtectedMember) \
-    m(PublicMember) \
-    m(Member) \
+    m(AbstractClass) \
+    m(Class) \
     m(ClassConstant) \
     m(ClassMember) \
+    m(Constant) \
+    m(ConstantMember) \
+    m(ConstantParameter) \
+    m(ConstantPointerParameter) \
+    m(ConstexprVariable) \
+    m(EnumConstant) \
     m(GlobalConstant) \
     m(GlobalConstantPointer) \
     m(GlobalPointer) \
@@ -91,18 +91,18 @@ namespace readability {
     m(LocalConstantPointer) \
     m(LocalPointer) \
     m(LocalVariable) \
-    m(StaticConstant) \
-    m(StaticVariable) \
-    m(Constant) \
-    m(Variable) \
-    m(ConstantParameter) \
-    m(ParameterPack) \
+    m(Member) \
     m(Parameter) \
     m(PointerParameter) \
-    m(ConstantPointerParameter) \
-    m(AbstractClass) \
+    m(ScopedEnumConstant) \
+    m(PrivateMember) \
+    m(ProtectedMember) \
+    m(PublicMember) \
+    m(StaticConstant) \
+    m(StaticVariable) \
+    m(Variable) \
+    m(ParameterPack) \
     m(Struct) \
-    m(Class) \
     m(Union) \
     m(Enum) \
     m(GlobalFunction) \
@@ -124,6 +124,8 @@ namespace readability {
     m(MacroDefinition) \
     m(ObjcIvar) \
     m(Concept) \
+    m(Namespace) \
+    m(InlineNamespace) \
 
 enum StyleKind : int {
 #define ENUMERATE(v) SK_ ## v,
@@ -417,14 +419,7 @@ IdentifierNamingCheck::~IdentifierNamingCheck() = default;
 
 bool IdentifierNamingCheck::HungarianNotation::checkOptionValid(
     int StyleKindIndex) const {
-  if ((StyleKindIndex >= SK_EnumConstant) &&
-      (StyleKindIndex <= SK_ConstantParameter))
-    return true;
-
-  if ((StyleKindIndex >= SK_Parameter) && (StyleKindIndex <= SK_Enum))
-    return true;
-
-  return false;
+  return StyleKindIndex <= SK_Variable;
 }
 
 bool IdentifierNamingCheck::HungarianNotation::isOptionEnabled(
